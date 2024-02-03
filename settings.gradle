@@ -1,0 +1,5 @@
+rootProject.name = 'bytebuddy-agent-quickstart'
+include 'spy'
+include 'agent'
+include 'core'
+

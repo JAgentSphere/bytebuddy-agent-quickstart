@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group 'com.jas.quickstart.spy'
+
+//dependencies {
+//    implementation 'net.bytebuddy:byte-buddy:1.14.11'
+//}
+//
+//repositories {
+//    mavenCentral()
+//}
+
+shadowJar {
+    archiveBaseName = 'spy'
+    archiveClassifier = null
+    enableRelocation = false
+//    include('com/jas/quickstart/**')
+//
+//
+//    dependencies {
+//        include(
+//                dependency('net.bytebuddy:byte-buddy:1.14.11')
+//        )
+//    }
+//
+//    include("net/bytebuddy/implementation/bind/annotation/**")
+//    include("net/bytebuddy/implementation/bind/annotation/This")
+//    include("net/bytebuddy/implementation/bind/annotation/AllArguments")
+//    include("net/bytebuddy/implementation/bind/annotation/AllArguments\$Assignment")
+//    include("net/bytebuddy/implementation/bind/annotation/SuperCall")
+//    include("net/bytebuddy/implementation/bind/annotation/Origin")
+//    include("net/bytebuddy/implementation/bind/annotation/Morph")
+    enableRelocation = false
+}
+
+jar.finalizedBy shadowJar
+

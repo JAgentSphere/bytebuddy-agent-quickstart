@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 8
+}
+
+tasks.named("clean") {
+    dependsOn ':spy:clean', ':agent:clean', ':core:clean'
+    delete 'release/spy.jar'
+    delete 'release/agent.jar'
+    delete 'release/core.jar'
+}
+
+tasks.named('jar') {
+    dependsOn 'clean', ':spy:shadowJar', ':agent:jar', ':core:shadowJar'
+
+    doLast {
+        copy {
+            from 'spy/build/libs/spy.jar'
+            into 'release'
+        }
+
+        copy {
+            from 'agent/build/libs/agent.jar'
+            into 'release'
+        }
+
+        copy {
+            from 'core/build/libs/core.jar'
+            into 'release'
+        }
+    }
+}

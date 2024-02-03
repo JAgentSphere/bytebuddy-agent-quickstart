@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.jas.quickstart.agent'
+
+jar {
+    archiveBaseName = 'agent'
+
+    manifest {
+        attributes 'Premain-Class': 'com.jas.quickstart.agent.AgentLauncher'
+        attributes 'Agent-Class': 'com.jas.quickstart.agent.AgentLauncher'
+        attributes 'Can-Redefine-Classes': true
+        attributes 'Can-Retransform-Classes': true
+        attributes 'Can-Set-Native-Method-Prefix': true
+    }
+}
