@@ -1,0 +1,4 @@
+debug: true
+metric: true
+dumpClass: true
+dumpFolder: weaving/classes

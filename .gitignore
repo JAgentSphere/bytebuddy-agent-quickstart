@@ -38,5 +38,7 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-release/**
+release/*.jar
+release/demo/**
+release/weaving/**
 Makefile
